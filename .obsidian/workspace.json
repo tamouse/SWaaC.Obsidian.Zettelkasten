@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "37c996bba248243f",
+        "id": "d6d5ad91a6362dca",
         "type": "tabs",
         "children": [
           {
-            "id": "6b2555166d508e8f",
+            "id": "8ce941c7a1e8c121",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -81,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -120,16 +118,15 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "README.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -138,11 +135,52 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
     }
   },
-  "active": "df7c93be2f115013",
+  "active": "8ce941c7a1e8c121",
   "lastOpenFiles": [
-    "README.md"
+    "swaac/posts/2011/10/So passes a real hero of the computing age. RIP Dennis Ritchie.md",
+    "swaac/posts/2011/10/#so-passes-a-real-hero-of-the-computing-age.org#",
+    "swaac/posts/2011/10/Another personal hero falls. RIP John McCarthy.md",
+    "swaac/posts/2011/01/SWaaC Intro.md",
+    "swaac/posts/2011/01/Colophon.md",
+    "swaac/posts/2011/01/About.md",
+    "swaac/posts/2023/2023-04-10-quick-start-for-take-home-tests.md",
+    "_templates",
+    "README.md",
+    "swaac/posts/Tech/windows-machine-provisioning-checklist.txt",
+    "swaac/posts/Tech/vagrant-notes.org",
+    "swaac/posts/Tech/ux-notes.org",
+    "swaac/posts/Tech/thor-notes.org",
+    "swaac/posts/Tech/tech-inbox.org",
+    "swaac/posts/Tech/static-sites.org",
+    "swaac/posts/Tech/shell-notes.org",
+    "swaac/posts/Tech/ruby-notes.org",
+    "swaac/posts/Tech/README.md",
+    "swaac/posts/2022/2022-02-19-how-to-access-icloud-files-from-the-command-line.md",
+    "swaac/posts/2021/2021-12-23-til-how-to-use-low-data-mode-in-ios.md",
+    "swaac/posts/2021/2021-10-01-open-ended-range-in-rails.md",
+    "swaac/posts/2021/2021-07-09-murmurations-at-drip.md",
+    "swaac/posts/2020/12/2020-12-09-til-deleting-nested-objects-in-accepts-nested-attributes-for.md",
+    "swaac/posts/2020/10/TIL-scoped-uniqueness-validation-syntax.md",
+    "swaac/posts/2020/04/2020-04-28-til-using-optional-for-nested-attributes.md",
+    "swaac/posts/2020/04/2020-04-08-using-keybase-for-secure-git-repos.md",
+    "swaac/posts/2020/04/2020-04-07-yil-rails-validators-dont-change-type.md",
+    "swaac/posts/2020/04/2020-04-01-building-rails-compatible-query-strings-in-javascript.md",
+    "swaac/posts/2020/03/2020-03-23-honouring-colour-scheme-in-css.md",
+    "swaac/posts/2020/03/2020-03-23-books-on-software-estimating.md",
+    "swaac/posts/2020/03/2020-03-21-setting-git-default-editor.md",
+    "swaac/posts/2020/03/2020-03-10-using-rails-url-helpers-outside-a-controller.md",
+    "swaac/posts/2020/02/2020-02-10-git-follies-prefacing-commit-msg-with-ticket-number.md",
+    "swaac/posts/2020/02/2020-02-05-git-follies-save-points-and-silent-reverts.md",
+    "swaac/posts/2020/02/2020-02-04-ci-skip-in-commit-title-bad.md",
+    "swaac/posts/2019/08/wtfsm.jpg",
+    "swaac/posts/2018/12/kawaii-toast.png",
+    "swaac/images/reset-ios-simulator.png",
+    "swaac/images/prefer-pluck-to-map.jpg",
+    "swaac/images/miro_skill_building_out_a_network.jpg",
+    "swaac/images/keybase-git-gui.jpg"
   ]
 }

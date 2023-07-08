@@ -1,0 +1,42 @@
+* Git
+** Git How-tos
+*** Doing a ~git merge~ "Dry Run"
+    :PROPERTIES:
+    :CAPTURE_DATE: [2018-02-28 Wed 07:43]
+    :END:
+
+    From [[https://stackoverflow.com/a/501461/742446][stackoverflow]]:
+
+    Pass in the --no-commit flag, but to avoid a fast-forward commit, also pass in --no-ff, like so:
+
+    #+BEGIN_SRC shell-script
+      $ git merge --no-commit --no-ff $BRANCH
+    #+END_SRC
+
+    To examine the staged changes:
+
+    #+BEGIN_SRC shell-script
+      $ git diff --cached
+    #+END_SRC
+
+    And you can undo the merge, even if it is a fast-forward merge:
+
+    #+BEGIN_SRC shell-script
+      $ git merge --abort
+    #+END_SRC
+
+    Set up a git aliases for it:
+
+    #+BEGIN_SRC shell-script
+      git config --global alias.dryrun=merge --no-commit --no-ff --no-edit
+      git config --global alias.cine=commit --no-edit
+    #+END_SRC
+
+    Then run:
+
+    #+BEGIN_SRC shell-script
+      git dryrun $BRANCH
+      # assuming that looks ok
+      get cine
+    #+END_SRC
+

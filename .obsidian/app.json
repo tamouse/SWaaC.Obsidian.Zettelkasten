@@ -1,1 +1,30 @@
-{}
+{
+  "showFrontmatter": true,
+  "spellcheck": true,
+  "tabSize": 2,
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "./attachments",
+  "userIgnoreFilters": [
+    "*.zip",
+    "*.tar",
+    "*.tar.gz",
+    "*.tgz",
+    "*.gz",
+    "*.Z",
+    "*.log",
+    "*.auz",
+    "*.nav",
+    "*.out",
+    "*.snm",
+    "*.toc",
+    ".idea/",
+    "*.bak",
+    ".DS_Store",
+    "*~",
+    "#*#",
+    ".#*",
+    "*_flymake_*"
+  ],
+  "promptDelete": false
+}
