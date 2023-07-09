@@ -1,0 +1,371 @@
+* Python
+** Python Notes (refile Target)
+
+*** Joining a list of strings with a separator
+    :PROPERTIES:
+    :CAPTURE_DATE: [2016-12-19 Mon]
+    :END:
+
+    This is rather the exact opposite of the way Ruby does it.
+
+    #+BEGIN_SRC python
+      sepstr.join(list_of_strings)
+
+      # Example:
+
+      ', '.join(['Apple','Pear','Banana','Orange'])
+      # => "Apple, Pear, Banana, Orange"
+    #+END_SRC
+
+    I have not yet understood why this is done this way, but perhaps
+    it's entirely arbitrary.
+
+*** Using boto3 to grab a file from S3
+    :PROPERTIES:
+    :CAPTURE_DATE: [2016-12-19 Mon 17:18]
+    :END:
+
+    Upload a local file to S3:
+
+    #+BEGIN_SRC python
+      import boto3
+
+      boto_session = boto3.Session(profile_name='myaws')
+
+      boto_session.resource('s3').Bucket('my_bucket').upload_file('/tmp/file.txt', 'some/file.txt')
+    #+END_SRC
+
+    This will download a file to the local machine:
+
+    #+BEGIN_SRC python
+      import boto3
+
+      boto_session = boto3.Session(profile_name='myaws')
+      content = boto_session.resource('s3').Bucket('my_bucket').download_file('some/file.txt', '/tmp/somfile.txt')
+
+    #+END_SRC
+
+    This will pull the file (object) into process memory (careful!)
+
+    #+BEGIN_SRC python
+      import boto3
+
+      boto_session = boto3.Session(profile_name='myaws')
+      content = boto_session.resource('s3').Object('my_bucket', 'some/file.txt')['Body'].read()
+    #+END_SRC
+
+
+**** More links on this:
+
+     [[https://gist.github.com/iMilnb/0ff71b44026cfd7894f8][Programmatically manipulate AWS resources with boto3 - a quick
+     hands on]]
+
+*** Building a MANIFEST.in template for sdist
+
+    [[https://docs.python.org/2/distutils/sourcedist.html#manifest-template][python docs for MANIFEST.in template]]
+
+
+
+*** Magic to make a python script run
+    :PROPERTIES:
+    :CAPTURE_DATE: [2016-12-20 Tue 11:47]
+    :END:
+
+
+    When writing a python script that defines a bunch of methods,
+    classes, and so on, it can be imported into another script to do
+    stuff with, or run as an independent script.
+
+    The magic that makes that work is:
+
+    #+BEGIN_SRC python
+      if __name__ == '__main__':
+          app.run()
+    #+END_SRC
+
+    at the bottom of the file. (~app~ would be defined by the file
+    somewhere.)
+
+    Including a shebang at the top will make it interpretable from the
+    shell, too.
+*** Python ~with~ statement
+    :PROPERTIES:
+    :CAPTURE_DATE: [2016-12-20 Tue 15:34]
+    :LINK:     https://docs.python.org/3/whatsnew/2.6.html#pep-343-the-with-statement
+    :TITLE:    What’s New in Python 2.6 — Python 3.5.2 documentation
+    :END:
+
+    :CAPTURE_DATE: [2016-12-20 Tue 15:34]
+    :LINK:     https://docs.python.org/3/whatsnew/2.6.html#pep-343-the-with-statement
+    :TITLE:    What’s New in Python 2.6 — Python 3.5.2 documentation
+
+    The ‘with‘ statement clarifies code that previously would use
+    try...finally blocks to ensure that clean-up code is executed. In
+    this section, I’ll discuss the statement as it will commonly be
+    used. In the next section, I’ll examine the implementation
+    details and show how to write objects for use with this
+    statement.
+
+    The ‘with‘ statement is a control-flow structure
+    whose basic structure is:
+
+    #+BEGIN_SRC python
+      with expression [as variable]:
+          with-block
+
+    #+END_SRC
+*** Ned Batchelder: Lists vs. Tuples
+    :PROPERTIES:
+    :CAPTURE_DATE: [2017-04-15 Sat 12:13]
+    :LINK:     https://nedbatchelder.com/blog/201608/lists_vs_tuples.html
+    :TITLE:    Ned Batchelder: Lists vs. Tuples
+    :END:
+
+    :CAPTURE_DATE: [2017-04-15 Sat 12:13]
+    :LINK:     https://nedbatchelder.com/blog/201608/lists_vs_tuples.html
+    :TITLE:    Ned Batchelder: Lists vs. Tuples
+
+    Response to my question in PyLadies#help_me channel.
+
+    To put the Cultural Difference in terms of the C language, lists
+    are like arrays, tuples are like structs.
+*** Ned Batchelder: Tag: Python
+    :PROPERTIES:
+    :CAPTURE_DATE: [2017-04-15 Sat 12:16]
+    :LINK:     https://nedbatchelder.com/blog/tag/python.html
+    :TITLE:    Ned Batchelder: Tag: Python
+    :END:
+
+    :CAPTURE_DATE: [2017-04-15 Sat 12:16]
+    :LINK:     https://nedbatchelder.com/blog/tag/python.html
+    :TITLE:    Ned Batchelder: Tag: Python
+
+    Python Posts by Ned Batchelder; useful info, blogging since 2002.
+
+*** Doctest
+    OMG DOCTEST IS DA BOMB!!!
+
+    https://docs.python.org/3/library/doctest.html
+
+    Enter tests in doc strings (Elixir has this too):
+
+    #+BEGIN_SRC python
+
+      SQFT_TO_SQM = 0.09290304
+
+      class CalcArgumentError(Exception):
+          def __init__(self, arg, msg):
+              self.argument = arg
+              self.message = msg
+
+
+      def calc(length, width):
+          """
+
+          Calculate the area of a room given length and width
+
+          :returns: (area in sq ft, area in sq meters)
+
+          >>> calc(10.0,5.0)
+          (50.0, 4.645152)
+
+          >>> calc(2,2)
+          (4.0, 0.37161216)
+
+          >>> calc("a", 2)
+          Traceback (most recent call last):
+              ...
+          CalcArgumentError: ('a', 'invalid input: Length must be a number greater than zero')
+
+          >>> calc(2, "a")
+          Traceback (most recent call last):
+              ...
+          CalcArgumentError: ('a', 'invalid input: Width must be a number greater than zero')
+
+          >>> calc(0, 1)
+          Traceback (most recent call last):
+              ...
+          CalcArgumentError: (0.0, 'invalid input: Length must be a number greater than zero')
+
+          >>> calc(1, 0)
+          Traceback (most recent call last):
+              ...
+          CalcArgumentError: (0.0, 'invalid input: Width must be a number greater than zero')
+
+
+
+          """
+
+          try:
+              length = float(length)
+              if not length > 0.0:
+                  raise ValueError
+          except ValueError as err:
+              raise CalcArgumentError(length, "invalid input: Length must be a number greater than zero")
+
+          try:
+              width = float(width)
+              if not width > 0.0:
+                  raise ValueError
+          except ValueError as err:
+              raise CalcArgumentError(width, "invalid input: Width must be a number greater than zero")
+
+          area_sqft = length * width
+          area_sqm = area_sqft * SQFT_TO_SQM
+          return area_sqft, area_sqm
+
+      if __name__ == '__main__':
+          import doctest
+          print("Running Doctests")
+          if (doctest.testmod()[0]) == 0:
+              print("PASSED!")
+
+    #+END_SRC
+
+    This is so cool. Ruby has one, but it looks *way* out of date, and
+    not really much supported. This is first class testing in Python!
+
+*** learn how to deep merge dictionaries in Python               :polyconfig:
+    :PROPERTIES:
+    :CAPTURE_DATE: [2017-01-27 Fri 08:08]
+    :END:
+** PySFTP notes
+*** Opening a connection using a private key file
+    :PROPERTIES:
+    :CAPTURE_DATE: [2016-12-19 Mon]
+    :END:
+
+    This is pretty straightforward, you can use the ~private_key~
+    parameter to give the PEM file:
+
+    #+BEGIN_SRC python
+      import pysftp
+
+      with pysftp.Connection('ftphost', username='ftpuser', private_key='path/to/pem/file') as sftp:
+          do this
+          do that
+    #+END_SRC
+
+    *BUT* there's a huge caveat that I haven't figured out yet: If the
+    host is not yet in the known hosts file, the above fails. The only
+    way I could get this to work is to open a connection to the host
+    from the command line:
+
+    #+BEGIN_SRC shell-script
+      sftp -i path/to/pem/file ftpuser@ftphost
+    #+END_SRC
+
+    This opens an interactive connection, which is good enough since it
+    stuffs the ftphost into the ~\~/.ssh/known_hosts~ file.
+
+** Flask
+
+*** microblog flask sample application
+
+**** Firebase Config
+
+     Obtained from
+     https://console.firebase.google.com/project/microblog-flask-app/overview
+     by clicking on "Add Firebase to your web app".
+
+     ~pyfirebase~ uses only the database URL.
+
+
+     #+BEGIN_SRC html
+       <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+       <script>
+         // Initialize Firebase
+         var config = {
+           apiKey: "",
+           authDomain: "microblog-flask-app.firebaseapp.com",
+           databaseURL: "https://microblog-flask-app.firebaseio.com",
+           storageBucket: "microblog-flask-app.appspot.com",
+           messagingSenderId: "500140812042",
+           serviceAccount: "microblog-flask-app-firebase-adminsdk-ji6au-b353df6573.json",
+         };
+         firebase.initializeApp(config);
+       </script>
+     #+END_SRC
+
+     #+BEGIN_SRC python
+       FIREBASE_CONFIG = {
+           "apiKey": "",
+           "authDomain": "microblog-flask-app.firebaseapp.com",
+           "databaseURL": "https://microblog-flask-app.firebaseio.com",
+           "storageBucket": "microblog-flask-app.appspot.com",
+           "messagingSenderId": "500140812042",
+           "serviceAccount": "microblog-flask-app-firebase-adminsdk-ji6au-b353df6573.json",
+       }
+
+     #+END_SRC
+
+**** Firebase Service Account info
+
+     #+BEGIN_SRC javascript
+       {
+         "type": "service_account",
+         "project_id": "microblog-flask-app",
+         "private_key_id": "",
+         "private_key": "",
+         "client_email": "",
+         "client_id": "",
+         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+         "token_uri": "https://accounts.google.com/o/oauth2/token",
+         "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+         "client_x509_cert_url": ""
+       }
+     #+END_SRC
+
+**** thisbejim/Pyrebase: A simple python wrapper for the Firebase API.
+     :PROPERTIES:
+     :CAPTURE_DATE: [2017-03-21 Tue 20:43]
+     :LINK:     https://github.com/thisbejim/Pyrebase
+     :TITLE:    thisbejim/Pyrebase: A simple python wrapper for the Firebase API.
+     :DESCRIPTION: Pyrebase - A simple python wrapper for the Firebase API.
+     :END:
+
+     :CAPTURE_DATE: [2017-03-21 Tue 20:43]
+     :LINK:     https://github.com/thisbejim/Pyrebase
+     :TITLE:    thisbejim/Pyrebase: A simple python wrapper for the Firebase API.
+     :DESCRIPTION: Pyrebase - A simple python wrapper for the Firebase API.
+
+     this is current one people suggest using. The ones with the
+     highest relevance in PyPi are deprecated!!
+
+** PyLadies
+*** Joining Slack
+
+    The PyLadies Slack team has women from all over the world that are
+    willing and able to help folks learn.
+
+    Go to http://slackin.pyladies.com/  to sign in (will get approval
+    there.)
+
+    On the slack, PyLadiesTC has a channel: ~#twin-cities~
+
+**** Join PyLadies on Slack!
+     :PROPERTIES:
+     :CAPTURE_DATE: [2017-04-12 Wed 21:35]
+     :LINK:     http://slackin.pyladies.com/
+     :TITLE:    Join PyLadies on Slack!
+     :END:
+
+     :CAPTURE_DATE: [2017-04-12 Wed 21:35]
+     :LINK:     http://slackin.pyladies.com/
+     :TITLE:    Join PyLadies on Slack!
+
+     How to sign up for the PyLadies Slack team.
+** Books
+*** NOT recommended
+**** Python for the Raspberry Pi
+     :PROPERTIES:
+     :AUTHORS:  Blum, Bresnahan
+     :Copyright: 2016
+     :Publisher: Pearson (SAMS imprint)
+     :END:
+
+     :AUTHORS:  Blum, Bresnahan
+     :Copyright: 2016
+     :Publisher: Pearson (SAMS imprint)
+
+     Out of date, covers old versions of the RPi.
