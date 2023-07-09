@@ -8,11 +8,33 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8ce941c7a1e8c121",
+            "id": "fc7e6007b7c4f895",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Moving git HEAD to a previous commit.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "bd5a2c06e99443f1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "476eb69911198d8d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zettelkasten Obsidian Workflow.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Moving git HEAD to a previous commit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Moving git HEAD to a previous commit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,10 +142,13 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Moving git HEAD to a previous commit.md"
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -139,8 +166,23 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "8ce941c7a1e8c121",
+  "active": "fc7e6007b7c4f895",
   "lastOpenFiles": [
+    "But what if I had pushed my branch? (moving git HEAD).md",
+    "I had not pushed my branch yet (moving git HEAD).md",
+    "swaac/posts/2011/10/so-passes-a-real-hero-of-the-computing-age.org",
+    "Problems changing remote commit history.md",
+    "Moving git HEAD to a previous commit.md",
+    "().md",
+    "_templates/Idea Compass - template.md",
+    "attachments/2023.07.08.ZettelkastenVideosNotesP038.jpg",
+    "Zettelkasten Obsidian Workflow.md",
+    "attachments/2023.07.08.ZettelkastenVideosNotesP038.callout.jpg",
+    "attachments/2023.07.08.ZettelkastenVideosNotesP041.jpg",
+    "attachments/2023.07.08.ZettelkastenVideosNotesP040.jpg",
+    "attachments/2023.07.08.ZettelkastenVideosNotesP039.jpg",
+    "attachments/2023.07.08.ZettelkastenVideosNotesP039atomicMap.jpg",
+    "attachments",
     "swaac/posts/2011/10/So passes a real hero of the computing age. RIP Dennis Ritchie.md",
     "swaac/posts/2011/10/#so-passes-a-real-hero-of-the-computing-age.org#",
     "swaac/posts/2011/10/Another personal hero falls. RIP John McCarthy.md",
@@ -156,8 +198,6 @@
     "swaac/posts/Tech/thor-notes.org",
     "swaac/posts/Tech/tech-inbox.org",
     "swaac/posts/Tech/static-sites.org",
-    "swaac/posts/Tech/shell-notes.org",
-    "swaac/posts/Tech/ruby-notes.org",
     "swaac/posts/Tech/README.md",
     "swaac/posts/2022/2022-02-19-how-to-access-icloud-files-from-the-command-line.md",
     "swaac/posts/2021/2021-12-23-til-how-to-use-low-data-mode-in-ios.md",
@@ -169,18 +209,9 @@
     "swaac/posts/2020/04/2020-04-08-using-keybase-for-secure-git-repos.md",
     "swaac/posts/2020/04/2020-04-07-yil-rails-validators-dont-change-type.md",
     "swaac/posts/2020/04/2020-04-01-building-rails-compatible-query-strings-in-javascript.md",
-    "swaac/posts/2020/03/2020-03-23-honouring-colour-scheme-in-css.md",
-    "swaac/posts/2020/03/2020-03-23-books-on-software-estimating.md",
-    "swaac/posts/2020/03/2020-03-21-setting-git-default-editor.md",
-    "swaac/posts/2020/03/2020-03-10-using-rails-url-helpers-outside-a-controller.md",
-    "swaac/posts/2020/02/2020-02-10-git-follies-prefacing-commit-msg-with-ticket-number.md",
-    "swaac/posts/2020/02/2020-02-05-git-follies-save-points-and-silent-reverts.md",
-    "swaac/posts/2020/02/2020-02-04-ci-skip-in-commit-title-bad.md",
     "swaac/posts/2019/08/wtfsm.jpg",
     "swaac/posts/2018/12/kawaii-toast.png",
     "swaac/images/reset-ios-simulator.png",
-    "swaac/images/prefer-pluck-to-map.jpg",
-    "swaac/images/miro_skill_building_out_a_network.jpg",
-    "swaac/images/keybase-git-gui.jpg"
+    "swaac/images/prefer-pluck-to-map.jpg"
   ]
 }
