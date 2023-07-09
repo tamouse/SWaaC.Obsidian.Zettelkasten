@@ -4,35 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "d6d5ad91a6362dca",
+        "id": "864c2955fe3add46",
         "type": "tabs",
         "children": [
           {
-            "id": "fc7e6007b7c4f895",
+            "id": "b1521238822e1840",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Moving git HEAD to a previous commit.md",
+                "file": "I had not pushed my branch yet (moving git HEAD).md",
                 "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "bd5a2c06e99443f1",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "476eb69911198d8d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Zettelkasten Obsidian Workflow.md",
-                "mode": "source",
+                "backlinks": true,
                 "source": false
               }
             }
@@ -103,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Moving git HEAD to a previous commit.md",
+                "file": "I had not pushed my branch yet (moving git HEAD).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Moving git HEAD to a previous commit.md",
+                "file": "I had not pushed my branch yet (moving git HEAD).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Moving git HEAD to a previous commit.md"
+                "file": "I had not pushed my branch yet (moving git HEAD).md"
               }
             }
           }
@@ -166,17 +149,18 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "fc7e6007b7c4f895",
+  "active": "b1521238822e1840",
   "lastOpenFiles": [
+    "swaac/posts/2022/2022-02-19-how-to-access-icloud-files-from-the-command-line.md",
+    "Moving git HEAD to a previous commit.md",
+    "Zettelkasten Obsidian Workflow.md",
     "But what if I had pushed my branch? (moving git HEAD).md",
     "I had not pushed my branch yet (moving git HEAD).md",
     "swaac/posts/2011/10/so-passes-a-real-hero-of-the-computing-age.org",
     "Problems changing remote commit history.md",
-    "Moving git HEAD to a previous commit.md",
     "().md",
     "_templates/Idea Compass - template.md",
     "attachments/2023.07.08.ZettelkastenVideosNotesP038.jpg",
-    "Zettelkasten Obsidian Workflow.md",
     "attachments/2023.07.08.ZettelkastenVideosNotesP038.callout.jpg",
     "attachments/2023.07.08.ZettelkastenVideosNotesP041.jpg",
     "attachments/2023.07.08.ZettelkastenVideosNotesP040.jpg",
@@ -199,7 +183,6 @@
     "swaac/posts/Tech/tech-inbox.org",
     "swaac/posts/Tech/static-sites.org",
     "swaac/posts/Tech/README.md",
-    "swaac/posts/2022/2022-02-19-how-to-access-icloud-files-from-the-command-line.md",
     "swaac/posts/2021/2021-12-23-til-how-to-use-low-data-mode-in-ios.md",
     "swaac/posts/2021/2021-10-01-open-ended-range-in-rails.md",
     "swaac/posts/2021/2021-07-09-murmurations-at-drip.md",

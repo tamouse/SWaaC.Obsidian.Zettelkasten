@@ -17,7 +17,7 @@ It's also possible to do this to a remote.
 
 
 # Compass
-![[2023.07.08.ZettelkastenVideosNotesP039atomicMap.jpg]]
+
 ## West - similar ideas
 
 ## East - opposing ideas
